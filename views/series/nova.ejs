@@ -6,13 +6,16 @@
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <h2>Nova Series</h2>
-        <form method="post">
+        <form method="post" >
             <div class="mb-3">
               <label for="nome" class="form-label">Nome</label>
+              <% if(errors && errors.indexOf('name')>=0){ %> 
+                 <p>Por favor, informe o nome da serie</p>
+              <% } %> 
+              
               <input type="text" class="form-control" id="nome" aria-describedby="nomeHelp" name='name' placeholder="Digite o nome da Série">
             </div>
             <select class="form-select" aria-label="Default select example" name ='status'>
-                <option selected>Selecione o status da série</option>
                 <option value="to-watch">Para assistir</option>
                 <option value="watching">Assistindo</option>
                 <option value="watched">Ja assistido</option>
